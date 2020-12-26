@@ -11,6 +11,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlin.coroutines.CoroutineContext
 
 object Repository {
+
     fun searchPlaces(query: String) = fire(Dispatchers.IO) {
         val placeResponse = SunnyWeatherNetwork.searchPlaces(query)
         if (placeResponse.status == "ok") {
@@ -60,4 +61,5 @@ object Repository {
             }
             emit(result)
         }
+
 }

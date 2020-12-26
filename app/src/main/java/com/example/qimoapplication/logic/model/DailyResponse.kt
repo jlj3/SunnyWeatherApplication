@@ -3,7 +3,8 @@ package com.example.qimoapplication.logic.model
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
-class DailyResponse {
+class DailyResponse(val status: String, val result: Result) {
+
     class Result(val daily: Daily)
 
     class Daily(val temperature: List<Temperature>, val skycon: List<Skycon>, @SerializedName("life_index") val lifeIndex: LifeIndex)
